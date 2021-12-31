@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,75 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyJanken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n78-UR-u76">
+                                <rect key="frame" x="0.0" y="44" width="414" height="678"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-gz-whV">
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="NIV-OL-hQF"/>
+                                    <constraint firstAttribute="height" constant="100" id="kvS-vn-XfE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="じゃんけんする！">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="shuffleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uns-Iq-MEK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これからじゃんけんをします" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ5-fJ-MgO">
+                                <rect key="frame" x="0.0" y="722" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="pux-2t-2bA"/>
+                                    <constraint firstAttribute="height" constant="40" id="rC1-EW-gSz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.3529411764705882" green="0.94901960784313721" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PJ5-fJ-MgO" firstAttribute="top" secondItem="n78-UR-u76" secondAttribute="bottom" id="2xH-JZ-TEg"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="43e-t3-NeO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JdA-gz-whV" secondAttribute="trailing" id="AKN-5K-cBP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PJ5-fJ-MgO" secondAttribute="trailing" id="I5w-2r-MVD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JdA-gz-whV" secondAttribute="bottom" id="Mvz-4c-vpw"/>
+                            <constraint firstItem="PJ5-fJ-MgO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZBP-b9-ypX"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ep8-aL-Soa"/>
+                            <constraint firstItem="n78-UR-u76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fZ5-3Z-wpR"/>
+                            <constraint firstItem="PJ5-fJ-MgO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j3E-oS-jqF"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mUE-q9-t7w"/>
+                            <constraint firstItem="n78-UR-u76" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qSz-Fs-Z59"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n78-UR-u76" secondAttribute="trailing" id="s0f-ku-ToP"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="top" secondItem="PJ5-fJ-MgO" secondAttribute="bottom" id="uN9-wG-1mS"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="top" secondItem="PJ5-fJ-MgO" secondAttribute="bottom" id="yAD-jy-RKj"/>
+                            <constraint firstItem="JdA-gz-whV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yse-JQ-omv"/>
+                            <constraint firstItem="PJ5-fJ-MgO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zBY-Rc-7Fq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerImageView" destination="n78-UR-u76" id="W6L-b8-Uxe"/>
+                        <outlet property="answerLabel" destination="PJ5-fJ-MgO" id="1qh-Ty-upH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
